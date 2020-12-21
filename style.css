@@ -1,0 +1,300 @@
+/*CSS Styles for Hannah's Portfolio Website*/
+/*sets font family for whole site to be Raleway, ligh font*/
+body{
+	font-family: 'Raleway', sans-serif;
+	font-weight: 300;
+}
+
+/*sets h1 to bold*/
+h1{
+	font-weight: 500;
+}
+
+/*sets h2 to bold*/
+h2{
+	font-weight: 500;
+}
+
+/*sets h3 to bold*/
+h3{
+	font-weight: 500;
+}
+
+/*increases p font size to 13, weight to light*/
+p{
+	font-weight: 300;
+	font-size: 13pt;
+}
+
+
+/*sets navbar background color and font*/
+.navbar-expand-md{
+    background-color: black;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    top: 0;
+}
+
+/*change navbar links to be white*/
+.navbar-dark .navbar-nav .nav-link{
+    color: white;
+}
+
+/*if hover over link in nav bar will turn light grey*/
+.navbar-dark .navbar-nav .nav-link:hover{
+    color: lightgrey;
+}
+
+/*set dropdown menu to be black*/
+.dropdown-menu{
+	background-color: black;
+}
+
+/*sets dropdown menu text to be white, 11pt, light font weight*/
+.dropdown-item{
+	color: white;
+	font-weight: 300;
+	font-size: 11pt;
+}
+
+/*gets drop down menu to show on hover for CTF*/
+.dropdown:hover > .dropdown-menu {
+    display: block;
+}
+
+/*stops click on CTF from making dropdown sticky*/
+.dropdown > .dropdown-toggle:active {
+    pointer-events: none;
+}
+
+/*CSS for jumbotron elements: includes bottom black line, and spacing, gets rid of rounded edges*/
+.jumbotron{
+	display: flex;
+	align-items: center;
+	background-size: cover;
+	height: 400px;
+	margin-top: 50px;
+	border-bottom: solid 1px black;
+	border-radius: 0 !important;
+}
+
+
+/*changes background of headers in jumbotrons to be darker for when screen width is less than 1050px (except for about me page)*/
+/*changes images in ctf.html to take up more screen when screen width less than 1050px*/
+@media only screen and (max-width: 1050px) {
+	#jumboText1 h1{
+		font-weight: 300;
+		color: white;
+		border: solid 5px white;
+		text-align: left;
+		justify-content: bottom;
+		padding: 5px;
+		background: rgba(0,0,0,0.7);
+	}
+
+	#jumboText h1{
+		font-weight: 300;
+		color: white;
+		border: solid 7px white;
+		padding: 5px;
+		background: rgba(0,0,0,0.5);
+	}
+
+	/*ctf- responsive image with black border*/
+	.img-responsive1{
+		max-width: 90%; height: auto;
+		border-radius: 5px;
+		border: solid 2px black;
+	}
+
+
+}
+
+/*sets the h2 in the jumbotron on the portfolio page to be white*/
+#jumboText h2{
+	color: white;
+	font-weight: 300;
+}
+
+/*settings for background of headers in jumbotrons for when screen width is more than 1050px*/
+/*changes images in ctf.html to take up less screen when screen width more than 1050px*/
+@media only screen and (min-width:1050px){
+	#jumboText1 h1{
+		font-weight: 300;
+		color: white;
+		border: solid 7px white;
+		padding: 5px;
+		margin-left: 50%;
+		text-align: right;
+	}
+
+	#jumboText h1{
+		font-weight: 300;
+		color: white;
+		border: solid 7px white;
+		padding: 5px;
+	}
+
+	/*ctf- responsive image with black border*/
+	.img-responsive1{
+		max-width: 70%; height: auto;
+		border-radius: 5px;
+		border: solid 2px black;
+	}
+
+}
+
+/*changes size of ios images for mobile size screen*/
+/*changes jumboText in About Me page for mobile size screen*/
+@media only screen and (max-width: 575.98px){
+	.img-responsive2{
+		max-width: 40%; height: auto;
+		border-radius: 5px;
+	}
+	/*CSS for the text of the jumbotron in the About Me page*/
+	#jumboText2 h1{
+		font-weight: 300;
+		color: white;
+		border: solid 7px white;
+		padding: 5px;
+		margin-left: 50%;
+	}
+
+	th{
+	text-align: center;
+	font-weight: 300;
+	font-size: 10pt;
+	}
+}
+
+/*size of ios images for larger than mobile size screen*/
+/*changes jumboText in About Me page for larger than mobile size screen*/
+@media only screen and (min-width: 575.98px){
+	.img-responsive2{
+		max-width: 100%; height: auto;
+		border-radius: 5px;
+	}
+	/*CSS for the text of the jumbotron in the About Me page*/
+	#jumboText2 h1{
+		font-weight: 300;
+		color: white;
+		border: solid 7px white;
+		padding: 5px;
+		margin-left: 275px;
+	}
+
+	th{
+	text-align: center;
+	font-weight: 300;
+	}
+}
+
+/*adds margin at top of h4 elements in portofolio and sets to light font*/
+.portfolioText{
+	margin-top: 10px;
+	font-weight: 300;
+}
+
+/*increases font size for list in Data Visualization and CTF to 13*/
+.dataList{
+	font-size: 13pt;
+}
+
+/*has image size be responsive to the container that they are in*/
+.img-responsive{
+	max-width: 100%; height: auto;
+	border-radius: 5px;
+}
+
+
+/*add some extra padding between portfolio items and footer*/
+#portfolioItems h4{
+	padding-bottom: 20px;
+}
+
+/*sets up bar at top of CTF, mono-alphabetic, and FA Calc pages to have links to each other*/
+.FAlinks p{
+	background-color: black;
+	text-align: right;
+	padding: 8px;
+	color:white;
+	padding-right: 15px;
+}
+
+/*sets link color to be lighter in FA Link bar*/
+.FAlinks a{
+	color: lightblue;
+}
+
+/*class to change font-weight in specific elements to be bold version of Raleway*/
+.bold{
+	font-weight: 500;
+}
+
+/*make specific rows in tables be Raleway Bold*/
+.boldRow th{
+	font-weight: 500;
+}
+
+/*set table properties*/
+table{
+	width: 100%;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+th, td {
+  padding: 4px;
+}
+
+
+
+/*Set button properties- aligned right, margin, font*/
+button{
+	float: right; 
+	margin: 5px;
+	border-radius: 4px;
+	font-size: 11pt;
+}
+
+/*sets background color, alignment and size/padding of footer*/
+footer{
+	background-color: #3D3D3D;
+	align-items: center;
+	padding: 20px;
+}
+
+/*aligns text center in text input boxes in monoA table*/
+input{
+	text-align: center;
+	font-weight: 300;
+}
+
+/*makes textarea elements take up full width, and 100 px height*/
+textarea{
+	width: 100%; 
+	height: 100px;
+	font-weight: 300;
+}
+
+/*sets color of footer text to white*/
+#footerText{
+	font-size: 12pt;
+	color: white;
+	margin-bottom: 0px;
+}
+
+/*makes links in footer lighter*/
+#footerText a{
+	color: lightblue;
+}
+
+/*sets up style for copy part of footer*/
+#footerText2{
+	font-size: 10pt;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	color: white;
+}

@@ -1,0 +1,303 @@
+
+<!-- Mono-alphabetic substitution tool: includes navbar, jumbotron, and tool to sub letters in text either by user given key or randomly -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- link bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+  <!-- link stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Get Raleway Font Family-->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;500&display=swap" rel="stylesheet">
+
+  <!-- tab bar title and icon -->
+  <title>Monoalphabetic Encryption</title>
+  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+</head>
+
+
+<body>
+  <!-- navbar container -->
+  <header class = "container">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+
+      <!-- set up upper right logo and make it clickable to home page -->
+      <a href="index.html" class="navbar-brand"><img src="img/portfolioLogo.png" alt="Han Thompson Designer and Innovator" width="250" height="60"></a>
+
+      <!-- have navbar collapse on smaller screens -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- set up different navbar tabs -->
+      <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+
+          <!-- Data Visualization tab -->
+          <li class="nav-item">
+            <a class="nav-link" href="data.html">Data Analysis</a>
+          </li>
+
+          <!-- CTF Frequency Analysis Tab, Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="ctf.html" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CTF</a>
+              <!-- dropdwon menu with 3 items -->
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="ctf.html">Frequency Analysis Tutorial</a>
+                <a class="dropdown-item" href="facalc.html">Frequency Analysis Calculator</a>
+                <a class="dropdown-item" href="monoA.html">Mono-Alphabetic Substitution Tool</a>
+              </div>
+          </li>
+
+          <!-- iOS Dev Tab -->
+          <li class="nav-item">
+            <a class="nav-link" href="ios.html">iOS Dev</a>
+          </li>
+
+          <!-- Web Dev Tab -->
+          <li class="nav-item">
+            <a class="nav-link" href="sdweb.html">Web Dev</a>
+          </li>
+
+          <!-- WordPress Tab -->
+          <li class="nav-item">
+            <a class="nav-link" href="wordp.html">WordPress</a>
+          </li>
+
+          <!-- Software Development Tab -->
+          <li class="nav-item">
+            <a class="nav-link" href="soundsoft.html">Software</a>
+          </li>
+
+          <!-- About Me Tab -->
+          <li class="nav-item">
+            <a class="nav-link" href="aboutme.html">About Me</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+  </header>
+
+  <!-- Jumbotron with background image and text -->
+  <section class="jumbotron" style="background-image: url('img/ctf/monoaJumbo.png'); margin-bottom: 0px;">
+    <div class="container" align="right" id="jumboText1">
+        <h1>MONO-ALPHABETIC<br>encryptor/decryptor</h1>
+    </div>
+  </section>
+
+  <!-- links to other tools/tutorials -->
+  <section class="FAlinks">
+      <p ><a href="ctf.html">Frequency Analysis Tutorial</a>  | <a href="facalc.html">Frequency Analysis Calculator</a></p>
+  </section>
+
+  <!-- MAIN CONTAINER FOR FREQUENCY ANALYSIS TUTORIAL -->
+  <section class="highlight">
+    <div class="container main">
+      <div class="row">
+
+        <!-- overall explanation of mono-alphabetic sub tool -->
+        <div class="col-sm-12">
+          <h2>Mono-Alphabetic Substitution Tool</h2>
+          <p>This tool allows you to plug in you own text and do mono-alphabetic substitution encryption/decryption either randomly, or based on your own key. You do not have to give a complete key for it to work- whatever letters you do provide a key for will be replaced and in lowercase, whatever you don't will remain the same and in uppercase. See the tutorial on <a href="ctf.html">frequency analysis</a> for more information on the topic.<br></p>
+        </div>
+
+        <!-- User Input and buttons -->
+        <div class="col-md-6">
+          <!-- label -->
+          <p class="bold">Your text:</p>
+
+          <!-- where user inputs text -->
+          <textarea id="replaceText"></textarea>
+
+          <!-- button connects to replaceLetters in frequency.js that replaces each letter in text with key given by user -->
+          <button onclick="replaceLetters()">Replace by Own Key</button>
+
+          <!-- button connect to randomReplace in frequency.js that replaces each letter in text based on randomly generated key -->
+          <button onclick="randomReplace()">Replace by Random Key</button>
+
+        </div>
+
+        <!-- shows the results of either replacement (is textarea to allow for large input without compromising styling) -->
+        <div class="col-md-6">
+          <p class="bold">Results:<br></p>
+            <textarea id="results" readonly></textarea>
+        </div>
+
+        <!-- first 3 divs centers the table and makes it share row with other table when screen xl -->
+        <div class="col-xl-6">
+          <div class="row justify-content-center">
+            <div class="col-auto">
+              <!-- own key label -->
+              <p class="bold"><br><br>Create Your Own Key:</p>
+
+              <!-- table where user puts own inputs as the encryption key -->
+              <table id="replaceTable">
+                  <tr class="boldRow">
+                    <th>A</th>
+                    <th>B</th>
+                    <th>C</th>
+                    <th>D</th>
+                    <th>E</th>
+                    <th>F</th>
+                    <th>G</th>
+                    <th>H</th>
+                    <th>I</th>
+                    <th>J</th>
+                    <th>K</th>
+                    <th>L</th>
+                    <th>M</th>
+                  </tr>
+                  <tr>
+                    <!-- each only allows for single char input -->
+                    <th><input id="A" type="text" size="2" maxlength="1"></th>
+                    <th><input id="B" type="text" size="2" maxlength="1"></th>
+                    <th><input id="C" type="text" size="2" maxlength="1"></th>
+                    <th><input id="D" type="text" size="2" maxlength="1"></th>
+                    <th><input id="E" type="text" size="2" maxlength="1"></th>
+                    <th><input id="F" type="text" size="2" maxlength="1"></th>
+                    <th><input id="G" type="text" size="2" maxlength="1"></th>
+                    <th><input id="H" type="text" size="2" maxlength="1"></th>
+                    <th><input id="I" type="text" size="2" maxlength="1"></th>
+                    <th><input id="J" type="text" size="2" maxlength="1"></th>
+                    <th><input id="K" type="text" size="2" maxlength="1"></th>
+                    <th><input id="L" type="text" size="2" maxlength="1"></th>
+                    <th><input id="M" type="text" size="2" maxlength="1"></th>
+                  </tr>
+                  <tr class="boldRow">
+                    <th>N</th>
+                    <th>O</th>
+                    <th>P</th>
+                    <th>Q</th>
+                    <th>R</th>
+                    <th>S</th>
+                    <th>T</th>
+                    <th>U</th>
+                    <th>V</th>
+                    <th>W</th>
+                    <th>X</th>
+                    <th>Y</th>
+                    <th>Z</th>
+                  </tr>
+                  <tr>
+                    <th><input id="N" type="text" size="2" maxlength="1"></th>
+                    <th><input id="O" type="text" size="2" maxlength="1"></th>
+                    <th><input id="P" type="text" size="2" maxlength="1"></th>
+                    <th><input id="Q" type="text" size="2" maxlength="1"></th>
+                    <th><input id="R" type="text" size="2" maxlength="1"></th>
+                    <th><input id="S" type="text" size="2" maxlength="1"></th>
+                    <th><input id="T" type="text" size="2" maxlength="1"></th>
+                    <th><input id="U" type="text" size="2" maxlength="1"></th>
+                    <th><input id="V" type="text" size="2" maxlength="1"></th>
+                    <th><input id="W" type="text" size="2" maxlength="1"></th>
+                    <th><input id="X" type="text" size="2" maxlength="1"></th>
+                    <th><input id="Y" type="text" size="2" maxlength="1"></th>
+                    <th><input id="Z" type="text" size="2" maxlength="1"></th>
+                  </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- first 3 divs centers the table and makes it share row with other table when screen xl -->
+        <div class="col-xl-6">
+          <div class="row justify-content-center">
+            <div class="col-auto">
+              <!-- label -->
+              <p class="bold"><br><br>Encryption Key Used:</p>
+
+              <!-- key for what encryption key was used, updated by frequency.js -->
+              <table id="resultKey">
+                    <tr class="boldRow">
+                      <th>A</th>
+                      <th>B</th>
+                      <th>C</th>
+                      <th>D</th>
+                      <th>E</th>
+                      <th>F</th>
+                      <th>G</th>
+                      <th>H</th>
+                      <th>I</th>
+                      <th>J</th>
+                      <th>K</th>
+                      <th>L</th>
+                      <th>M</th>
+                      <th>N</th>
+                      <th>O</th>
+                      <th>P</th>
+                      <th>Q</th>
+                      <th>R</th>
+                      <th>S</th>
+                      <th>T</th>
+                      <th>U</th>
+                      <th>V</th>
+                      <th>W</th>
+                      <th>X</th>
+                      <th>Y</th>
+                      <th>Z</th>
+                    </tr>
+                    <tr>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                    </tr>
+                </table>
+            </div>
+          </div>
+        </div>
+        
+        <!-- creates extra space between content and footer -->
+        <div class="col-sm-12">        
+            <p><br></p>
+        </div>
+  </section>
+
+
+  <!-- Page Footer -->
+  <footer class="page-footer">
+    <div class=”row”>
+      <!-- footer text as id footerText -->
+      <div class="col-sm-12 text-center">
+        <p  id="footerText">Find me, and the code for this website, on <a href="https://github.com/hannah-thompson">Github</a>.</p>
+        <p id="footerText2">&copy; 2020 Hannah's Web Dev All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS for Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  <script src="frequency.js"></script>
+
+</body>
+</html>

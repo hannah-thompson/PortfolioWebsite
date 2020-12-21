@@ -1,0 +1,172 @@
+
+<!-- DATA VISUALIZATION PAGE: has navbar, jumbotron, and explanation of data process -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- link bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+  <!-- link stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Get Raleway Font Family-->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;500&display=swap" rel="stylesheet">
+
+  <!-- tab bar title and icon -->
+  <title>Data Visualization</title>
+  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+</head>
+
+
+<body>
+  <!-- navbar container -->
+  <header class = "container">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+
+      <!-- set up upper right logo and make it clickable to home page -->
+      <a href="index.html" class="navbar-brand"><img src="img/portfolioLogo.png" alt="Han Thompson Designer and Innovator" width="250" height="60"></a>
+
+      <!-- have navbar collapse on smaller screens -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- set up different navbar tabs -->
+      <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+
+          <!-- Data Visualization tab -->
+          <li class="nav-item">
+            <a class="nav-link" href="data.html">Data Analysis</a>
+          </li>
+
+          <!-- CTF Frequency Analysis Tab, Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="ctf.html" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CTF</a>
+              <!-- dropdwon menu with 3 items -->
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="ctf.html">Frequency Analysis Tutorial</a>
+                <a class="dropdown-item" href="facalc.html">Frequency Analysis Calculator</a>
+                <a class="dropdown-item" href="monoA.html">Mono-Alphabetic Substitution Tool</a>
+              </div>
+          </li>
+
+          <!-- iOS Dev Tab -->
+          <li class="nav-item">
+            <a class="nav-link" href="ios.html">iOS Dev</a>
+          </li>
+
+          <!-- Web Dev Tab -->
+          <li class="nav-item">
+            <a class="nav-link" href="sdweb.html">Web Dev</a>
+          </li>
+
+          <!-- WordPress Tab -->
+          <li class="nav-item">
+            <a class="nav-link" href="wordp.html">WordPress</a>
+          </li>
+
+          <!-- Software Development Tab -->
+          <li class="nav-item">
+            <a class="nav-link" href="soundsoft.html">Software</a>
+          </li>
+
+          <!-- About Me Tab -->
+          <li class="nav-item">
+            <a class="nav-link" href="aboutme.html">About Me</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+  </header>
+
+  <!-- data visualization jumbotron with background image and h1 text-->
+  <section class="jumbotron" style="background-image: url('img/data/dataJumbo.png'); border-bottom: solid 1px black;">
+    <!-- text CSS is set with id JumboText1 in style.css -->
+    <div class="container" align="right" id="jumboText1">
+        <h1>DATA<br>VISUALIZATION</h1>
+      </div>
+  </section>
+
+  <!-- main container for data explanation -->
+  <section class="highlight">
+    <div class="container main">
+      <div class="row">
+
+        <!-- heading -->
+        <div class= "col-sm-12">
+          <h2>K-12 Computer Science Course Distribution in NYC Schools</h2>
+          <h3>Using Python to Clean and Visualize the Data</h3>
+          <p><br></p>
+        </div>
+
+        <!-- images -->
+        <div class="col-md-4">
+          <img class="img-responsive" src="img/data/showdata1.png" alt="Visualization of Data">
+        </div>
+        <div class="col-md-4">
+          <img class="img-responsive" src="img/data/data2.png" alt="Python Code">
+        </div>
+        <div class="col-md-4">
+          <img class="img-responsive" src="img/data/data3.png" alt="CSV Dataset">
+        </div>
+
+        <!-- explanation of process as ordered/numbered list, with class dataList for CSS -->
+        <div class="col-sm-12">
+          <p><br></p>
+          <h3>My Process</h3>
+          <ol class="dataList">
+            <li><u>Data discovery:</u> In perusing the data.world site, I discovered this dataset that contained the number of computer science courses at each school in New York City. My goal in creating a data visualzation for this set was to see if any parts of the city could benefit from additional STEM resources.</li>
+            <li><u>Data cleaning:</u> Some schools had ambiguious names, such as "Concord High" that could easily be misinterpreted by the Google Maps API as schools in other regions, so those data points had their latitudes and longitudes manually calculated.</li>
+            <li><u>Adding to the data:</u> The orginal CSV file did not contain latitudinal or longitudinal information, so that had to be added to the dataset. The Google Maps Python API was used to geocode (find latitude and longitude) each school in the data set in order to be able to map it, and pandas was used to add the new information to the CSV.</li>
+            <li><u>Follow up data cleaning:</u> Some data points were clear outliers geographically and had to be removed to maximize the data visualization. A few datapoints got misinterpreted by Google Maps as schools in different regions, even after the initial data cleaning, and their coordinates were manually corrected.</li>
+            <li><u>Setting plot boundaries:</u> The max and min of latitude and longitude were calculated by looping through the CSV, to determine the latitudinal and longitudinal boundaries for the scatterplot.</li>
+            <li><u>Plotting:</u> The points were plotted geographically using a matplotlib scatterplot overlaid on a map of NYC. The color and size of each point was determined based upon how many computer science courses each school had, with larger points representing more CS courses.</li>
+            <li><u>Final touches:</u> A legend was added to make the data easier to understand and interpret based on the color of each plot point.</li>
+          </ol>
+
+          <!-- indetn, heading for final product -->
+          <p><br></p>
+          <h3>The Final Product</h3>
+        </div>
+
+        <!-- this empty col is here to help center the image -->
+        <div class="col-sm-2">
+        </div>
+
+        <!-- final data image -->
+        <div class="col-sm-8">
+          <img class="img-responsive" src="img/data/finalData.png" alt="Final Plot of Data">
+        </div>
+
+        <!-- break to create space between content and footer -->
+        <div class="col-sm-12">
+          <p><br></p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Page Footer -->
+  <footer class="page-footer">
+    <div class=”row”>
+      <div class="col-sm-12 text-center">
+        <p  id="footerText">To see the code, checkout my Github <a href="https://github.com/hannah-thompson/NYCCSCourseData">here</a>.</p>
+        <p id="footerText2">&copy; 2020 Hannah's Web Dev All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+    
+  <!-- JS for Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>

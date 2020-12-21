@@ -1,0 +1,159 @@
+
+<!-- SOUND SOFTWARE DEV PAGE: includes navbar, jumbotron, and description and images of sound software dev project -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- link bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+  <!-- link stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Get Raleway Font Family-->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;500&display=swap" rel="stylesheet">
+
+  <!-- tab bar title and icon -->
+  <title>Software Development</title>
+  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+</head>
+
+
+<body>
+  <!-- navbar container -->
+  <header class = "container">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+
+      <!-- set up upper right logo and make it clickable to home page -->
+      <a href="index.html" class="navbar-brand"><img src="img/portfolioLogo.png" alt="Han Thompson Designer and Innovator" width="250" height="60"></a>
+
+      <!-- have navbar collapse on smaller screens -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- set up different navbar tabs -->
+      <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+
+          <!-- Data Visualization tab -->
+          <li class="nav-item">
+            <a class="nav-link" href="data.html">Data Analysis</a>
+          </li>
+
+          <!-- CTF Frequency Analysis Tab, Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="ctf.html" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CTF</a>
+              <!-- dropdwon menu with 3 items -->
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="ctf.html">Frequency Analysis Tutorial</a>
+                <a class="dropdown-item" href="facalc.html">Frequency Analysis Calculator</a>
+                <a class="dropdown-item" href="monoA.html">Mono-Alphabetic Substitution Tool</a>
+              </div>
+          </li>
+
+          <!-- iOS Dev Tab -->
+          <li class="nav-item">
+            <a class="nav-link" href="ios.html">iOS Dev</a>
+          </li>
+
+          <!-- Web Dev Tab -->
+          <li class="nav-item">
+            <a class="nav-link" href="sdweb.html">Web Dev</a>
+          </li>
+
+          <!-- WordPress Tab -->
+          <li class="nav-item">
+            <a class="nav-link" href="wordp.html">WordPress</a>
+          </li>
+
+          <!-- Software Development Tab -->
+          <li class="nav-item">
+            <a class="nav-link" href="soundsoft.html">Software</a>
+          </li>
+
+          <!-- About Me Tab -->
+          <li class="nav-item">
+            <a class="nav-link" href="aboutme.html">About Me</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+  </header>
+
+  <!-- sound software jumbotron with background image and text -->
+  <section class="jumbotron" style="background-image: url('img/sound/soundJumbo.png');">
+    <div class="container" align="right" id="jumboText1">
+      <h1>SOFTWARE<br>DEVELOPMENT</h1>
+    </div>
+  </section>
+
+  <!-- main container for sound software dev description -->
+  <section class="highlight">
+    <div class="container main">
+      <div class="row">
+        <!-- Title and overall description -->
+        <div class= "col-sm-12">
+          <h2>Sound-Visualization and Oscillator Software</h2>
+          <p>I took on this project during my time as a research assistant for the computer science and education departments at UVA. It was created under a NSF-STEM grant as a pair to a curriculum to enable rural students to better understand and visualize sound waves.<br><br></p>
+          <h3>Sound Oscillator Example Video</h3>
+        </div>
+
+        <!-- Sound Oscillator GIF -->
+        <div class="col-md-6">
+          <img class="img-responsive" src="img/sound/soundSoft.gif" alt="Sound Oscillator GIF">
+        </div>
+
+        <!-- Sound Oscillator description -->
+        <div class="col-md-6">
+          <p><br>The oscillator allows the user to manipulate the properties of a sine wave and visually and auditorally see the outcomes. Additionally, they can visualize and hear how two different sound waves interact with eachother by manipulating the second sine wave and observing and hearing the overlay effect.<br><br>Here you can observe the manipulating of the sine waves and the subsequent effect of how the are graphed and overlaid. You also see the user press play to listen to the sound the wave would create.</p>
+        </div>
+
+        <!-- Sound Visualizer title -->
+        <div class="col-sm-12">
+          <p><br></p>
+          <h3>Sound Visualizer Example Video</h3>
+        </div>
+
+        <!-- Sound Visualizer description -->
+        <div class="col-md-6">
+          <p><br>The sound visualizer visually represents sine waves being read in real time from the user's selected audio input. The user can stop the recording at any moment and then go back through the graph to further analyze the sound wave.<br><br>Here you can observe the user choosing their built-in mic as their input, then making noises and observing the resulting sine waves, and subsequently stopping the audio to further analyze the resulting sine wave.<br><br>Both programs were written in pure Python and packaged for deployment with PyInstaller.</p>
+        </div>
+
+        <!-- Sound Visualizer GIF -->
+        <div class="col-md-6">
+          <img class="img-responsive" src="img/sound/SoundSoft1.gif" alt="Sound Visualizer GIF">
+        </div>
+
+        <!-- creates space between text and footer -->
+        <div class="col-sm-12">
+          <p><br></p>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Page Footer -->
+  <footer class="page-footer">
+    <div class=”row”>
+      <!-- footer text as id footerText -->
+      <div class="col-sm-12 text-center">
+        <p  id="footerText">To see the code, checkout my Github <a href="https://github.com/hannah-thompson/Sound-Visualization">here</a>.</p>
+        <p id="footerText2">&copy; 2020 Hannah's Web Dev All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS for Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>
